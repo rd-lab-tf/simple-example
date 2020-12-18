@@ -1,0 +1,18 @@
+.terraform/**
+
+# Terraform State Files
+*.tfstate
+*.tfstate.*
+
+# Logs Files
+*.log
+
+# Temporary Folders
+temp/*
+
+# IDE Folders
+# Microsoft Visual Studio Code
+.vscode
+
+# IntelliJ IDEA
+.idea
