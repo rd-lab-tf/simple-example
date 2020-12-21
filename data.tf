@@ -2,12 +2,12 @@ data "aws_vpc" "default" {
   default = true
 }
 
-data "aws_ami" "centos_7" {
+data "aws_ami" "centos_8" {
   owners = [ "aws-marketplace" ]
 
   filter {
     name   = "product-code"
-    values = ["cvugziknvmxgqna9noibqnnsy"]
+    values = ["47k9ia2igxpcce2bzo8u3kj03"]
   }
 
   filter {
