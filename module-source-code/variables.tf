@@ -2,9 +2,15 @@ variable "aws_region" {
   default = "eu-west-1"
 }
 
+variable "aws_profile" {
+  description = "Your AWS credentials profile name"
+  default = "default"
+}
+
 variable "my_external_ip" {
   description = "You external IP (could be obtained by command <curl https://ipinfo.io/ip>)"
   type = string
+  default = ""
 }
 
 variable "instance_type" {

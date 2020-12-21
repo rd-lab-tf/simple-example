@@ -1,3 +1,7 @@
+locals {
+  my_external_ip = var.my_external_ip == "" ? chomp(data.http.my_external_ip.body) : var.my_external_ip
+}
+
 resource "aws_security_group" "for_my_instance" {
   name        = "my instance security group"
   description = "For my_instance"
@@ -14,7 +18,7 @@ resource "aws_security_group_rule" "allow_ingress_all_from_my_ip" {
   to_port           = 0
   protocol          = "-1"
   security_group_id = aws_security_group.for_my_instance.id
-  cidr_blocks = [ "${var.my_external_ip}/32" ]
+  cidr_blocks = [ "${local.my_external_ip}/32" ]
 }
 
 resource "aws_security_group_rule" "allow_egress_all" {

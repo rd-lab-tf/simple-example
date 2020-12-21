@@ -19,3 +19,7 @@ data "aws_ami" "centos_8" {
 data "local_file" "my_public_ssh_key" {
   filename = var.ssh_pub_key_absolute_path
 }
+
+data "http" "my_external_ip" {
+  url = "https://ipinfo.io/ip"
+}
